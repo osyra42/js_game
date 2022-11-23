@@ -8,8 +8,8 @@
         background-color: #262626;
         color: #bbbbbb;
       }
-      canvas {
-        background-color: #333344;
+      #canvas {
+        background-color: #334433;
         padding-left: 0;
         padding-right: 0;
         margin-left: auto;
@@ -26,6 +26,14 @@
 </canvas>
 
 <script>
+window.onload = function() {
+  var canvas = document.getElementById("canvas");
+  var context = canvas.getContext("2d");
+  
+  context.moveTo(0, 0);
+  context.lineTo(350, 350);
+  context.stroke();
+};
   
 </script>
 </body>
