@@ -26,41 +26,25 @@
 
 <script>
 window.onload = function() {
-  var canvas = document.getElementById("canvas");
-  var context = canvas.getContext("2d");
-  
-  context.moveTo(0, 0);
-  context.lineTo(350, 350);
-  context.lineWidth = 3;
-  context.stroke();
-  
-  context.beginPath();
-  context.moveTo(0, 0);
-  context.rect(0, 0, 100, 100);
-  context.fill();
-  
-  context.beginPath();
-  context.moveTo(150, 150);
-  context.arc(150, 150, 100, 0, 1 * Math.PI);
-  context.lineWidth = 10;
-  context.strokeStyle = "blue";
-  context.stroke();
-  
-  context.beginPath();
-  context.arc(200, 200, 100, 0, 2 * Math.PI);
-  context.fillStyle = "green";
-  context.fill();
-  
-  context.beginPath();
-  context.font = '42px Arial'; 
-  context.fillStyle = 'red';
-  context.fillText("Hello World", 200, 100); 
-  context.lineWidth = 2;
-  context.strokeStyle = "gray";
-  context.strokeText("Hello World", 200, 100);
-  
-};
-  
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var x = 0;
+    var y = 100;
+    
+    function draw() {
+        context.beginPath();
+        context.rect(x, y, 100, 100);
+        context.fillStyle="red";
+        context.fill();
+
+        x += 10;
+        if (x >= 600) {
+            x = -100;
+        }
+    }
+    setInterval(draw, 50);
+}
+
 </script>
 </body>
 </html>
