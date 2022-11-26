@@ -31,13 +31,10 @@
 <button>x</button>
 <script>
 window.onload = function() {
-  function initialize() {
-    
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     var x = 0;
     var y = 100;
-  }
   
   function draw() {
     context.beginPath();
@@ -49,7 +46,7 @@ window.onload = function() {
       x = -100;
     }
   }
-  initialize();
+  
   setInterval(draw, 50);
 }
 
